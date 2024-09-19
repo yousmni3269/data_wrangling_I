@@ -5,6 +5,8 @@ output: github_document
 
 ```{r setup, echo = FALSE, message = FALSE}
 library(tidyverse)
+library(readxl)
+library(haven)
 ```
 
 
@@ -77,7 +79,7 @@ litters_df = janitor::clean_names(litters_df)
 pull(litters_df, gd0_weight)
 ```
 
-What is we code `group` as a factor variable?
+What if we code `group` as a factor variable?
 
 ```{r}
 litters_df = 
@@ -91,6 +93,31 @@ litters_df =
 ```
 
 
+## Importing an excel file 
 
+Import MLB 2011 summary data
+
+```{r}
+mlb_df = read_excel("data/mlb11.xlsx", sheet = "mlb11")
+```
+
+
+Import SAS data 
+```{r}
+pulse_df = read_sas("data/public_pulse_data.sas7bdat")
+```
+
+## Never use read.csv()
+
+```{r}
+litter_df = read_csv("data/FAS_litters.csv")
+```
+
+
+## Never do this either: 
+```{r}
+litters_df$L
+
+```
 
 

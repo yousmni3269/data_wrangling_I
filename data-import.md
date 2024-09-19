@@ -176,7 +176,7 @@ pull(litters_df, gd0_weight)
     ## [31] 23.8 22.6 23.8 25.5 23.9 24.5   NA   NA 26.9 27.5 28.5 33.4 21.8 25.4 20.0
     ## [46] 21.8 25.6 23.5 25.5
 
-What is we code `group` as a factor variable?
+What if we code `group` as a factor variable?
 
 ``` r
 litters_df = 
@@ -188,3 +188,42 @@ litters_df =
     )
   )
 ```
+
+## Importing an excel file
+
+Import MLB 2011 summary data
+
+``` r
+mlb_df = read_excel("data/mlb11.xlsx", sheet = "mlb11")
+```
+
+Import SAS data
+
+``` r
+pulse_df = read_sas("data/public_pulse_data.sas7bdat")
+```
+
+## Never use read.csv()
+
+``` r
+litter_df = read_csv("data/FAS_litters.csv")
+```
+
+    ## Rows: 49 Columns: 8
+    ## ── Column specification ────────────────────────────────────────────────────────
+    ## Delimiter: ","
+    ## chr (4): Group, Litter Number, GD0 weight, GD18 weight
+    ## dbl (4): GD of Birth, Pups born alive, Pups dead @ birth, Pups survive
+    ## 
+    ## ℹ Use `spec()` to retrieve the full column specification for this data.
+    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+## Never do this either:
+
+``` r
+litters_df$L
+```
+
+    ## Warning: Unknown or uninitialised column: `L`.
+
+    ## NULL
