@@ -108,7 +108,26 @@ filter(pups_df, pd_walk < 11, sex == 2)
 
 ## `mutate`
 
+```{r}
+mutate(litters_df, wt_gain = gd18_weight - gd0_weight)
+
+mutate(litters_df, sq_pups = pups_born_alive^2)
+
+mutate(litters_df, group = str_to_lower(group))
+
+mutate(
+  litters_df, 
+  wt_gain = gd18_weight - gd0_weight,
+  group = str_to_lower(group)
+  )
+
+```
+
+
+
+
 ## `arrange`
+
 
 
 
