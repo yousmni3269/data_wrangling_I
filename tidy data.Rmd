@@ -31,9 +31,16 @@ pulse_tidy_df =
   mutate(
     visit = replace(visit, visit == "bl", "00m")
   ) |>
-  relocate()
+  relocate(id, visit)
 ```
 
+Do one more example 
+
+```{r}
+litters_df =
+  read_csv("data/FAS_litters.csv", na = c("NA", "", ".")) |>
+  janitor::clean_names()
+```
 
 
 
