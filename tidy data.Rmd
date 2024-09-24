@@ -47,7 +47,7 @@ litters_df =
   ) |>
   mutate(
     gd_time = case_match(
-      gd_weight, 
+      gd_time, 
       "gd0_weight" ~ 0, 
       "gd18_weight" ~ 18
     ))
